@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>process Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">process</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="d-block">
+                    <thead class="text-center ">
+                        <tr>
+                            <th rowspan="2" style="width: 5%;">No.</th>
+                            <th rowspan="2" style="width: 15%;">substance</th>
+                            <th rowspan="2" style="width: 15%;">Name</th>
+                            <th rowspan="2" style="width: 9%;">Final Amount Per Package</th>
+                            <th rowspan="2" style="width: 6%;">Num of<br>Pills</th>
+                            <th rowspan="2" style="width: 9%;">Final Amount Per Pill</th>
+                            <th rowspan="2" style="width: 9%;">Box Number</th>
+                            <th rowspan="2" style="width: 10%;">Image</th>
+                            <th colspan="4" style="width: 22%;">Status </th>
+                        </tr>
+                        <tr>
+                            <th style="width: 5px;">Ordered</th>
+                            <th style="width: 5px;">Being prepared</th>
+                            <th style="width: 5px;">Out for Delivery</th>
+                            <th style="width: 5px;">In Transit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="No."><input type="number" class="num" readonly></td>
+                            <td data-label="Substance"><input type="text" class="sub_p" readonly></td>
+                            <td data-label="Name"><input type="text" class="name" readonly></td>
+                            <td data-label="Amt Package"><input type="number" class="final_amount_package" readonly></td>
+                            <td data-label="Pills"><input type="number" class="num_pill_sy" readonly></td>
+                            <td data-label="Amt Pill"><input type="number" class="final_amount_pill" readonly></td>
+                            <td data-label="Box"><input type="text" class="box_num"></td>
+                            <td data-label="Image"><input type="image" class="pill_img" src="" value="" readonly></td>
+                            <td data-label="Ordered"><input type="radio" name="status" class="btn-check status_ordered" value="Ordered"></td>
+                            <td data-label="Prepared"><input type="radio" name="status" class="btn-check status_prepar" value="Being prepared"></td>
+                            <td data-label="Delivery"><input type="radio" name="status" class="btn-check status_out" value="Out for Delivery"></td>
+                            <td data-label="Transit"><input type="radio" name="status" class="btn-check status_transit" value="In Transit"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mx-auto d-block">
+                <button class="btn btn-success" onclick="updateorderstatus()"><i class="fa-solid fa-arrows-rotate"></i></button>
+                <button class="btn btn-danger" onclick="DeleteOrder()"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadProcessDataFromDamas();
+            });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div>
+    </footer>
+</html>

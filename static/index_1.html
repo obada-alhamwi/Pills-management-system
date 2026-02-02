@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">Data Page</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="d-block w-80">
+                    <thead class="text-center">
+                        <tr>
+                            <th style="width: 18%;">substance</th>
+                            <th style="width: 18%;">Name</th>
+                            <th style="width: 16%;">Company</th>
+                            <th style="width: 9%;">Num of<br>Pills BL</th>
+                            <th style="width: 9%;">Num of<br>Pills SY</th>
+                            <th style="width: 12%;">Price</th>
+                            <th style="width: 12%;">Image</th>
+                            <th style="width: 5%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                        <tr class="input-row">
+                            <td data-label="Substance"><input type="text" class="sub_d" placeholder="Enter substance"></td>
+                            <td data-label="Name"><input type="text" class="name" placeholder="Enter name"></td>
+                            <td data-label="Company"><input type="text" class="com" placeholder="Enter company"></td>
+                            <td data-label="Pills BL"><input type="text" class="num_pill_lb" placeholder="0"></td>
+                            <td data-label="Pills SY"><input type="text" class="num_pill_sy" placeholder="0"></td>
+                            <td data-label="Price"><input type="text" class="price" placeholder="0"></td>
+                            <td data-label="Image"><input type="text" class="pill_img_src" placeholder="Image URL"></td>
+                            <td data-label="Action"><button class="btn btn-sm btn-danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mx-auto d-block" style="margin-top: 5px; display:flex; gap:8px; align-items:center; justify-content:center;">
+                <button class="btn btn-success" onclick="addNewRow()"><i class="fa-solid fa-plus"></i></button>
+                <button class="btn btn-secondary" onclick="collectPillData()"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button class="btn btn-danger" onclick="clearAllData()"><i class="fa-solid fa-eraser"></i></button>
+                <!-- Excel import input (hidden) and visible trigger -->
+                <input id="excelFileInput" type="file" accept=".xlsx,.xls" style="display:none" onchange="processExcelFile(event)">
+                <button class="btn btn-info" onclick="importFromExcel()" title="Import from Excel"><i class="fa-solid fa-file-import"></i></button>
+                <!-- Excel export button -->
+                <button class="btn btn-warning" onclick="exportToExcel()" title="Export to Excel"><i class="fa-solid fa-file-export"></i></button>
+            </div>
+            <div id="saveMessage" class="text-center mt-3" style="display: none; color: green; font-weight: bold;">
+                Data saved successfully!
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadSavedData();
+                // Add formatting to existing number inputs
+                document.querySelectorAll('.num_pill_lb, .num_pill_sy, .price').forEach(el => {
+                    addNumberFormatting(el);
+                });
+            });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div>
+    </footer>
+</html>

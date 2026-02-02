@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">Login Page</h1>
+        </header>
+        <div class="container">
+            <div class="login-wrapper d-flex justify-content-center align-items-center">
+                <div class="card login-card p-4 shadow-sm">
+                    <h2 class="text-center mb-3">Sign In</h2>
+                    <div id="loginMessage"></div>
+                    <form id="loginForm" novalidate>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+            const msg = document.getElementById('loginMessage');
+            msg.innerHTML = '';
+            if(!user || !pass){
+                msg.innerHTML = '<div class="alert alert-danger">Please fill in all fields.</div>';
+                return;
+            }
+            // Demo authentication - replace with real auth as needed
+            if(user === 'admin' && pass === 'password'){
+                msg.innerHTML = '<div class="alert alert-success">Login successful.</div>';
+                setTimeout(()=>{ window.location.href = 'index_1.html'; }, 800);
+            } else {
+                msg.innerHTML = '<div class="alert alert-danger">Incorrect username or password.</div>';
+            }
+        });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div> <div><base href=""></div>
+    </footer>
+</html>

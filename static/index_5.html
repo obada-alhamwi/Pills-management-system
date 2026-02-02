@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cost Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">Order Cost</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="w-80 d-block">
+                    <thead class="text-center">
+                        <tr>
+                            <th style="width: 5%;">No.</th>
+                            <th style="width: 15%;">substance</th>
+                            <th style="width: 12%;">Name</th>
+                            <th style="width: 10%;">Company</th>
+                            <th style="width: 10%;">Final Amount<br>Per Package</th>
+                            <th style="width: 8%;">Bonus</th>
+                            <th style="width: 10%;">Bonus %</th>
+                            <th style="width: 8%;">Price</th>
+                            <th style="width: 12%;">Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="No."><input type="number" class="num" readonly></td>
+                            <td data-label="Substance"><input type="text" class="sub_c" readonly></td>
+                            <td data-label="Name"><input type="text" class="name" readonly></td>
+                            <td data-label="Company"><input type="text" class="com" readonly></td>
+                            <td data-label="Amt Package"><input type="number" class="final_amount_package" readonly></td>
+                            <td data-label="Bonus"><input type="number" class="bonus" readonly></td>
+                            <td data-label="Bonus %"><input type="number" class="bonus_percentage" readonly></td>
+                            <td data-label="Price"><input type="number" class="price" readonly></td>
+                            <td data-label="Total"><input type="number" class="t_price" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="w-12">
+                    <tr><th>Finall Cost</th></tr>
+                    <tr><td><input type="text" class="f_cost" readonly></td></tr>
+                </table>
+            </div>
+        </div>  
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadCostDataFromProcess();
+            });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div>
+    </footer>
+</html> 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>management Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center ">management</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="d-block w-80">
+                    <thead class="text-center ">
+                        <tr>
+                            <th style="width: 5%;">No.</th>
+                            <th style="width: 17.5%;">substance</th>
+                            <th style="width: 17.5%;">Name</th>
+                            <th style="width: 10%;">Final Amount Per Package</th>
+                            <th style="width: 5%;">Num of<br>Pills</th>
+                            <th style="width: 10%;">Final Amount Per Pill</th>
+                            <th style="width: 10%;">Box Number</th>
+                            <th style="width: 10%;">Image</th>
+                            <th style="width: 15%;">Status </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="No."><input type="number" class="num" readonly></td>
+                            <td data-label="Substance"><input type="text" class="sub_m" readonly></td>
+                            <td data-label="Name"><input type="text" class="name" readonly></td>
+                            <td data-label="Amt Package"><input type="number" class="final_amount_package" readonly></td>
+                            <td data-label="Pills"><input type="number" class="num_pill_sy" readonly></td>
+                            <td data-label="Amt Pill"><input type="number" class="final_amount_pill" readonly></td>
+                            <td data-label="Box"><input type="text" class="box_num" readonly></td>
+                            <td data-label="Image"><input type="image" class="pill_img" src="" value="" readonly></td>
+                            <td data-label="Status"><input type="text" class="status_value" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadManagementDataFromProcess();
+            });
+        </script>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by </p>
+            </div>
+        </div>
+    </footer>    
+    </body>
+</html>

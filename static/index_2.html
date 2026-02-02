@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">Order</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="d-block">
+                    <thead class="text-center">
+                        <tr>
+                            <th rowspan="2" style="width: 4%;">No.</th>
+                            <th rowspan="2" style="width: 15%;">substance</th>
+                            <th rowspan="2" style="width: 15%;">Name</th>
+                            <th rowspan="2" style="width: 5%;">Num of<br>Pills</th>
+                            <th colspan="4" style="width: 34%;">Per package</th>
+                            <th colspan="2" style="width: 17%;">Per Pill</th>
+                            <th rowspan="2" style="width: 10%;">Image</th>
+                            <th rowspan="2" style="width: 5%;">Action</th>
+                            <th rowspan="2" style="width: 5%">Urgent</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 8%;">Current balance</th>
+                            <th style="width: 8%;">Quantity of Order</th>
+                            <th style="width: 8%;">Real Order</th>
+                            <th style="width: 8%;">Final balance </th>
+                            <th style="width: 8%;">Quantity of Order</th>
+                            <th style="width: 8%;">Real Order</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="mx-auto d-block" style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="addOrderRow()"><i class="fa-solid fa-plus"></i></button>
+                <button class="btn btn-success" onclick="SendOrdertoDamas()"><i class="fa-solid fa-truck-fast"></i></button>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadOrderDataFromStorage();
+                // Add formatting to existing number inputs
+                document.querySelectorAll('.pack_c, .pack_order, .pack_r_order').forEach(el => {
+                    addNumberFormatting(el);
+                });
+            });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div>
+    </footer>
+</html>

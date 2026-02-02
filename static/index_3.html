@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Damas Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="js/MyScript.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="text-center pb-2">Damas</h1>
+        </header>
+        <div class="contener">
+            <div>
+                <table class="d-block">
+                    <thead class="text-center ">
+                        <tr>
+                            <th style="width: 4%;">No.</th>
+                            <th style="width: 12%;">substance</th>
+                            <th style="width: 12%;">Name</th>
+                            <th style="width: 10%;">Company</th>
+                            <th style="width: 6%;">Quantity of Order</th>
+                            <th style="width: 5%;">Finall Order</th>
+                            <th style="width: 6%;">Price</th>
+                            <th style="width: 9%;">Total Price</th>
+                            <th style="width: 4%;">Bonus</th>
+                            <th style="width: 3%;">Num of<br>Pills</th>
+                            <th style="width: 6%;">Final Amount Per Package</th>
+                            <th style="width: 6%;">Final Amount Per Pill</th>
+                            <th style="width: 10%;">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody id="damasTableBody">
+                        <tr>
+                            <td><input type="number" class="num" readonly></td>
+                            <td><input type="text" class="sub_damas" readonly></td>
+                            <td><input type="text" class="name" readonly></td>
+                            <td><input type="text" class="com" readonly></td>
+                            <td><input type="number" class="pill_order" readonly></td>
+                            <td><input type="number" class="finall_order" onchange="calculateDamasValues(this)"></td>
+                            <td><input type="number" class="price" readonly></td>
+                            <td><input type="number" class="t_price" readonly></td>
+                            <td><input type="number" class="bonus" onchange="calculateDamasValues(this)"></td>
+                            <td><input type="number" class="num_pill_sy" readonly></td>
+                            <td><input type="number" class="final_amount_package" readonly></td>
+                            <td><input type="number" class="final_amount_pill" readonly></td>
+                            <td><input type="image" class="pill_img" src="" value="" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mx-auto d-block">
+                <button class="btn btn-success" onclick="ConfirmOrder()"><i class="fa-solid fa-check"></i></button>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                loadDamasDataFromStorage();
+                // Add formatting to existing number inputs
+                document.querySelectorAll('.finall_order, .bonus').forEach(el => {
+                    addNumberFormatting(el);
+                });
+            });
+        </script>
+    </body>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">Copyright © 2026 All rights reserved by HTS.</p>
+            </div>
+        </div>
+    </footer>
+</html>
